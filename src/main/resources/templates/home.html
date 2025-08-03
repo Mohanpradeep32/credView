@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>LoanEase - Home</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to LoanEase</h1>
+        <p>Manage all your loans easily and securely. Apply for different types of loans from top banks, simulate repayment schedules, and track your loan status.</p>
+        
+        <div class="buttons">
+            <button onclick="goToLogin()">Login</button>
+            <button onclick="goToRegister()">Register</button>
+        </div>
+    </div>
+
+    <script th:src="@{/js/home.js}"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+com\example\loanmanagement\config\WebConfig$1.class
+com\example\loanmanagement\repository\UserRepository.class
+com\example\loanmanagement\service\LoanService.class
+com\example\loanmanagement\LoanManagementApplication.class
+com\example\loanmanagement\model\Loan.class
+com\example\loanmanagement\config\WebConfig.class
+com\example\loanmanagement\model\User.class
+com\example\loanmanagement\repository\LoanRepository.class
+com\example\loanmanagement\controller\LoanController.class
+com\example\loanmanagement\service\UserService.class
