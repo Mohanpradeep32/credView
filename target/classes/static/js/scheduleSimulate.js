@@ -9,6 +9,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 let option = document.createElement("option");
                 option.value = type.loanTypeName;
                 option.text = type.loanTypeName;
+                
+                maxLoanAmt = type.maxLoanAmount;
+
+                document.getElementById("interestRate").value = type.interestRate;
+                document.getElementById("interestRateValue").textContent = type.interestRate;
+              
+                document.getElementById("tenure").value = type.tenureMonths;
+                document.getElementById("tenureValue").textContent = type.tenureMonths;
+
+                document.getElementById("repayDay").value = type.repaymentDay;
+
                 select.add(option);
             });
         });
@@ -22,11 +33,15 @@ document.getElementById("loanType").addEventListener("change", function () {
     fetch(`/api/loan-types/getByName?name=${encodeURIComponent(loanTypeName)}`)
         .then(res => res.json())
         .then(loanType => {
+
+            maxLoanAmt = loanType.maxLoanAmount;
+
             document.getElementById("interestRate").value = loanType.interestRate;
             document.getElementById("interestRateValue").textContent = loanType.interestRate;
-            maxLoanAmt = loanType.maxLoanAmount;
+            
             document.getElementById("tenure").value = loanType.tenureMonths;
             document.getElementById("tenureValue").textContent = loanType.tenureMonths;
+            
             document.getElementById("repayDay").value = loanType.repaymentDay;
         });
 });
