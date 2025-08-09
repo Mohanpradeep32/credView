@@ -6,15 +6,55 @@
     <link rel="stylesheet" th:href="@{/css/home.css}">
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to LoanEase</h1>
-        <p>Manage all your loans easily and securely. Apply for different types of loans from top banks, simulate repayment schedules, and track your loan status.</p>
-        
-        <div class="buttons">
-            <button onclick="goToLogin()">Login</button>
-            <button onclick="goToRegister()">Register</button>
-        </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">LoanEase</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/loanTypes">Loans</a>
+            <a href="/banks">Banks</a>
+            <a href="/contact">Contact</a>
+        </nav>
+        <div class="user-section" id="userSection">
+        <button onclick="goToLogin()">Login</button>
+        <button onclick="goToRegister()">Register</button>
     </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Welcome to LoanEase</h1>
+        <p>
+            LoanEase is your one-stop solution for managing all your loan needs. 
+            Apply for personal, home, and car loans from top banks. 
+            Compare interest rates, choose repayment methods, and simulate payment schedules before applying.
+        </p>
+
+        <section class="features">
+            <div class="feature" id = "banks">
+                <h3>🏦 Multiple Banks</h3>
+                <p>Choose from a wide range of trusted banks with competitive interest rates.</p>
+            </div>
+            <div class="feature" id = "loanTypes">
+                <h3>💰 Loan Types</h3>
+                <p>Personal, Home, and Car loans available with flexible repayment options.</p>
+            </div>
+            <div class="feature" id = "scheduleCal">
+                <h3>📊 Repayment Simulation</h3>
+                <p>Calculate and view your repayment schedule before committing.</p>
+            </div>
+            <div class="feature">
+                <h3>✅ Credit Check</h3>
+                <p>Get your credit history verified instantly for faster approval.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 LoanEase. All Rights Reserved.</p>
+        <p>Contact us: <a href="mailto:support@loanease.com">support@loanease.com</a></p>
+    </footer>
 
     <script th:src="@{/js/home.js}"></script>
 </body>

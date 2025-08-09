@@ -10,7 +10,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
   };
 
   try {
-    const response = await fetch("http://localhost:8080/auth/api/register", {
+    const response = await fetch("/auth/api/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -19,15 +19,15 @@ document.getElementById("registerForm").addEventListener("submit", async functio
     });
 
     const text = await response.text();
-    document.getElementById("registerMessage").textContent = text;
+    document.getElementById("registerMsg").textContent = text;
 
     if (text.includes("Registered successfully")) {
       setTimeout(() => {
         window.location.href = "/auth/login";
-      }, 1500); // Redirect to login after a short delay
+      }, 500); 
     }
   } catch (error) {
     console.error("Error during registration:", error);
-    document.getElementById("registerMessage").textContent = "Something went wrong.";
+    document.getElementById("registerMsg").textContent = "Something went wrong.";
   }
 });

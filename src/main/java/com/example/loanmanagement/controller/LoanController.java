@@ -27,7 +27,7 @@ public class LoanController {
     // ✅ Handle loan form submission from frontend
     @PostMapping("/apply")
     public String submitLoanForm(@ModelAttribute Loan loan, Model model) {
-        Loan created = loanService.applyLoan(loan);
+        // Loan created = loanService.applyLoan(loan);
         model.addAttribute("message", "Loan applied successfully!");
         return "loan-status"; // show confirmation page
     }

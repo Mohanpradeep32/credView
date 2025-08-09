@@ -18,6 +18,6 @@ public class LoanServiceImpl implements LoanService{
     }
 
     public List<Loan> getLoans(Long id) {
-        return loanDAO.findBySecUserId(id);
+        return loanDAO.findByCustomerId(id);
     }
 }

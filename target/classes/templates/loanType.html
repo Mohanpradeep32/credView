@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Types</title>
+    <link rel="stylesheet" th:href="@{/css/pages.css}">
+</head>
+<body>
+    <header>
+        <h1>Loan Types</h1>
+    </header>
+    <main>
+        <div class="loan-list">
+            <div th:each="loan : ${loanTypes}" class="loan-card">
+                <h2 th:text="${loan.loanTypeName}"></h2>
+                <p><strong>Interest Rate:</strong> <span th:text="${loan.interestRate}"></span>%</p>
+                <p><strong>Maximum Loan Amount:</strong> <span th:text="${loan.maxLoanAmount}"></span></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

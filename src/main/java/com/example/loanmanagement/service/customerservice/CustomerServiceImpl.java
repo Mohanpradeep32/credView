@@ -11,19 +11,19 @@ import com.example.loanmanagement.model.Customers;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerDAO secUserDAO;
+    private CustomerDAO customerDAO;
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public Customers register(Customers user) {
-        if (secUserDAO.findByUsername(user.getUsername()) != null) {
+        if (customerDAO.findByUsername(user.getUsername()) != null) {
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        return secUserDAO.save(user);
+        return customerDAO.save(user);
     }
 
     public boolean login(String username, String rawPassword) {
-    	Customers user = secUserDAO.findByUsername(username);
+    	Customers user = customerDAO.findByUsername(username);
         return user != null && passwordEncoder.matches(rawPassword, user.getPassword());
     }
 }

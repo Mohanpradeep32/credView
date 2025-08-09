@@ -13,7 +13,7 @@ public class Loan {
     private String status;
 
     @ManyToOne
-    private Customers secUser;
+    private Customers customer;
 
 	public Long getId() {
 		return id;
@@ -47,12 +47,12 @@ public class Loan {
 		this.status = status;
 	}
 
-	public Customers getSecUser() {
-		return secUser;
+	public Customers getCustomer() {
+		return customer;
 	}
 
-	public void setSecUser(Customers secUser) {
-		this.secUser = secUser;
+	public void setCustomer(Customers customer) {
+		this.customer = customer;
 	}
-
+	
 }

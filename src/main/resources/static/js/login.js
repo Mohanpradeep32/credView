@@ -1,13 +1,13 @@
 document.getElementById("loginForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const data = {
-    username: document.getElementById("username").value,
-    password: document.getElementById("password").value
-  };
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const data = { username, password };
 
   try {
-    const response = await fetch("http://localhost:8080/auth/api/login", {
+    const response = await fetch("/auth/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -16,15 +16,16 @@ document.getElementById("loginForm").addEventListener("submit", async function (
     });
 
     const text = await response.text();
-    document.getElementById("loginMessage").textContent = text;
+    document.getElementById("loginMsg").textContent = text; 
 
-    if (text.includes("successful")) {
+    if (text.includes("Login successful")) {
+      localStorage.setItem("username", username);
       setTimeout(() => {
-        window.location.href = "/"; // redirect after login success
+        window.location.href = "/";
       }, 1000);
     }
   } catch (error) {
-    console.error("Login error:", error);
-    document.getElementById("loginMessage").textContent = "Login failed!";
+    console.error("Error during login:", error);
+    document.getElementById("loginMsg").textContent = "Something went wrong.";
   }
 });

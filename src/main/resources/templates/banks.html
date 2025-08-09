@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Banks</title>
+    <link rel="stylesheet" th:href="@{/css/pages.css}">
+</head>
+<body>
+    <header>
+        <h1>Available Banks</h1>
+    </header>
+    <main>
+        <div class="bank-list">
+            <div th:each="bank : ${banks}" class="bank-card">
+                <h2 th:text="${bank.bankName}"></h2>
+                <p><strong>City:</strong> <span th:text="${bank.city}"></span></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

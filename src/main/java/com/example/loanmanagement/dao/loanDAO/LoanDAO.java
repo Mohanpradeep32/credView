@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface LoanDAO extends JpaRepository<Loan, Long> {
-    List<Loan> findBySecUserId(Long id);
+    List<Loan> findByCustomerId(Long id);
 }
