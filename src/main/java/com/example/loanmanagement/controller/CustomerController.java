@@ -16,21 +16,21 @@ public class CustomerController {
     @Autowired
     private CustomerService userService;
 
-    // ✅ Serve HTML login page
+    
     @GetMapping("/login")
     public String showLoginPage(Model model) {
         model.addAttribute("user", new Customers());
-        return "login"; // returns login.html (Thymeleaf)
+        return "login"; 
     }
 
-    // ✅ Serve HTML registration page
+    
     @GetMapping("/register")
     public String showRegisterPage(Model model) {
         model.addAttribute("user", new Customers());
-        return "register"; // returns register.html (Thymeleaf)
+        return "register"; 
     }
 
-    // ✅ Handle JSON registration (for Postman/React)
+    
     @PostMapping("/api/register")
     @ResponseBody
     public ResponseEntity<String> registerApi(@RequestBody Customers user) {
@@ -38,7 +38,7 @@ public class CustomerController {
         return ResponseEntity.ok(registered != null ? "Registered successfully" : "Username already exists");
     }
 
-    // ✅ Handle JSON login (for Postman/React)
+    
     @PostMapping("/api/login")
     @ResponseBody
     public ResponseEntity<String> loginApi(@RequestBody Customers user) {
@@ -46,7 +46,7 @@ public class CustomerController {
         return ResponseEntity.ok(loggedIn ? "Login successful" : "Invalid credentials");
     }
 
-    // ✅ Handle form-based registration (from HTML form)
+    
     @PostMapping("/register")
     public String handleFormRegister(@ModelAttribute Customers user, Model model) {
         Customers registered = userService.register(user);

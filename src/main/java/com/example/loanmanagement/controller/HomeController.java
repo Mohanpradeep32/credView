@@ -42,7 +42,7 @@ public class HomeController {
         return "contactUs"; 
     }
 
-    @GetMapping("/loanTypes")
+     @GetMapping("/loanTypes")
     public String loanType(Model model) {
         List<LoanType> loanTypes = loanTypeService.getAllLoanTypes();
         model.addAttribute("loanTypes", loanTypes);
@@ -54,5 +54,10 @@ public class HomeController {
         List<Bank> banks = bankService.getAllBanks();
         model.addAttribute("banks", banks);
         return "banks";
+    }
+
+    @GetMapping("/calculateSchedule")
+    public String scheduleSimulate() {
+        return "scheduleSimulate"; 
     }
 }

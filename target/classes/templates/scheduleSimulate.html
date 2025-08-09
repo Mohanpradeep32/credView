@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Repayment Schedule</title>
+    <link rel="stylesheet" href="/css/scheduleSimulate.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Repayment Schedule Calculator</h2>
+
+        <div id="formSection" class="form-section">
+            <label for="loanType">Loan Type:</label>
+            <select id="loanType" required></select>
+
+            <label>Loan Amount: ₹<span id="loanAmountValue">50000</span></label>
+            <input type="range" id="loanAmount" min="10000" max="2000000" step="1000" value="50000">
+            <small id="loanAmountError" class="error-message"></small>
+
+            <label>Interest Rate (% per year): <span id="interestRateValue">8</span>%</label>
+            <input type="range" id="interestRate" min="1" max="20" step="0.1" value="8">
+
+            <label>Tenure: <span id="tenureValue">12</span> months</label>
+            <input type="range" id="tenure" min="6" max="240" step="1" value="12">
+
+            <label for="repayDay">Repayment Day of Month:</label>
+            <input type="number" id="repayDay" min="1" max="31" value="5">
+
+            <button id="calculateBtn">Calculate Schedule</button>
+        </div>
+
+        <div id="resultSection" style="display:none;">
+            <h3>Repayment Schedule</h3>
+            <table id="scheduleTable">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Due Date</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Total Payment</th>
+                        <th>Remaining Balance</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/js/scheduleSimulate.js"></script>
+</body>
+</html>

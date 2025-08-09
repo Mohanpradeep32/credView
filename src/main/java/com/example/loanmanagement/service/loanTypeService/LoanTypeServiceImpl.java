@@ -18,5 +18,15 @@ public class LoanTypeServiceImpl implements LoanTypeService{
     public List<LoanType> getAllLoanTypes() {
        return loanTypeDAO.findAll();
     }
+
+    @Override
+    public LoanType getLoanTypeByName(String name) {
+        LoanType lt = loanTypeDAO.findByLoanTypeName(name);
+        
+        if(lt == null){
+            lt = new LoanType();
+        }
+        return lt;
+    }
     
 }

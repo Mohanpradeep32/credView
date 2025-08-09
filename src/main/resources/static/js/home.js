@@ -39,6 +39,6 @@ document.getElementById("banks").addEventListener("click", function() {
     window.location.href = "/banks";
 });
 
-document.getElementById("scheduleCal").addEventListener("click", function() {
-    window.location.href = "/scheduleCal";
+document.getElementById("calculateSchedule").addEventListener("click", function() {
+    window.location.href = "/calculateSchedule";
 });
